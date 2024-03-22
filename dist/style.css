@@ -1,0 +1,602 @@
+/*** fixing bug on reflex ***/
+:root {
+  --c2: black;
+}
+
+body {
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, Helvetica, serif;
+  font-size: 18px;
+  background: radial-gradient(circle at 50% 0%, #282828, #fff0), radial-gradient(circle at 50% 30%, #ebaf3f31, #282828);
+  overflow-y: scroll;
+}
+body * {
+  box-sizing: border-box;
+}
+.conteiner h1{
+  font-family: "Cuprum", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  color:white;
+  position: absolute;
+  top: 0;
+  right: 30%;
+  font-size: 55px;
+  letter-spacing: 13px;
+}
+.gallery {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  padding-top: 60px;
+}
+.gallery:before, .gallery:after {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border: 0 solid #fff;
+  border-width: 0 0 3px 3px;
+  transform: rotate(45deg);
+  left: 15px;
+  top: 11px;
+  border-radius: 2px;
+  opacity: 0.5;
+  animation: hide-s 2s ease 6s 1;
+  animation-fill-mode: forwards;
+}
+.gallery:after {
+  left: inherit;
+  right: 15px;
+  transform: rotate(-135deg);
+}
+
+.resizer {
+  position: absolute;
+  top: 0;
+  width: calc(100% - 45px);
+  height: 36px;
+  overflow: hidden;
+  text-align: center;
+  color: #ffffff;
+  line-height: 38px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  animation: letter-s 2s ease 0s 3 alternate, hide-s 2s ease 6s 1;
+  animation-fill-mode: backwards, forwards;
+  opacity: 0.5;
+}
+.resizer:before, .resizer:after {
+  content: "";
+  position: absolute;
+  width: calc(50% - 125px);
+  border-bottom: 4px dotted #ffffff;
+  margin-left: 20px;
+  top: 18px;
+  left: 0;
+  animation: lines-s 2s ease 0s 3 alternate;
+}
+.resizer:after {
+  right: 15px;
+  left: inherit;
+  margin-right: 7px;
+}
+
+@keyframes letter-s {
+  0% {
+    letter-spacing: 8px;
+  }
+  100% {
+    letter-spacing: 1px;
+  }
+}
+@keyframes lines-s {
+  0% {
+    width: calc(50% - 175px);
+  }
+  100% {
+    width: calc(50% - 125px);
+  }
+}
+@keyframes hide-s {
+  0% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.item {
+  width: calc(300px - 20px);
+  height: calc(456px - 20px);
+  height: 50vh;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 15px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0px 2px 3px 1px #0006;
+  
+}
+.item button{
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+.item:before {
+  font-size: 30px;
+  line-height: 50px;
+  padding-left: 10px;
+  mix-blend-mode: exclusion;
+  border-radius: 15px;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(110deg, #fffd, #fff0 20%, #282828 70%, #fffd);
+  opacity: 1;
+  transition: opacity 0.65s ease 0s;
+  box-sizing: border-box; 
+}
+
+.item:after {
+  content: "";
+  background-color: #fff9;
+  opacity: 0.6;
+  top: 0;
+  bottom: 0;
+  left: -100%;
+  position: absolute;
+  width: 5vmin;
+  box-shadow: 0 0 10vmin 2.5vmin #fff;
+  transform: skew(-20deg);
+  transition: all 0.25s ease;
+}
+.item:hover:before {
+  opacity: 0;
+  transition: opacity 0.65s ease 0s;
+}
+.item:hover:after {
+  left: 400px;
+  transition: left 0.5s ease 0s;
+}
+
+.item:nth-child(1) {
+  background-image: url(./antono/Alien\ capa.png);  
+ 
+}
+
+.item:nth-child(2) {
+  background-image: url(./antono/catnaipe\ akira.png);
+}
+
+.item:nth-child(3) {
+  background-image: url(./antono/Tocar\ da\ Pele.png);
+ 
+}
+
+.item:nth-child(4) {
+  background-image: url(./antono/NETO\ E\ LUCA\ COVER.png);
+}
+
+.item:nth-child(5) {
+  background-image: url(./antono/Gatarada.png);
+}
+
+.item:nth-child(6) {
+  background-image: url(./antono/feed\ meio\ eu\ e\ clara.jpg);
+}
+
+.item:nth-child(7) {
+  background-image: url(./antono/Meu\ amor.png);
+}
+
+.item:nth-child(8) {
+  background-image: url(./antono/MIRO\ rpg.png);
+}
+
+.item:nth-child(9) {
+  background-image: url(./antono/Icon\ Pc.jpg);
+}
+
+.item:nth-child(10) {
+  background-image: url(./antono/Pau\ No\ Cesar\ bosquete.jpg);
+}
+
+.item:nth-child(11) {
+  background-image: url(./antono/ICONE\ CAIQUE.png);
+}
+
+.item:nth-child(12) {
+  background-image: url(./antono/DARA\ rpg.png);
+}
+
+.item:nth-child(13) {
+  background-image: url(./antono/Tono\ Vagabond\ fundo\ branco.jpg);
+}
+
+.item:nth-child(14) {
+  background-image: url(./antono/Vem\ Pra\ Pixta\ REAL\ OFICIAL\ NACIONAL.jpg);
+}
+
+.item:nth-child(15) {
+  background-image: url(https://i.pinimg.com/236x/b1/6a/67/b16a67e37b37b99352dbbf96e841bf7a.jpg);
+}
+
+.item:nth-child(16) {
+  background-image: url(https://i.pinimg.com/236x/d7/bf/08/d7bf089a7b117584390dde837b2c9414.jpg);
+}
+
+.item:nth-child(17) {
+  background-image: url(https://i.pinimg.com/236x/3e/af/50/3eaf50bf42502bd8b9faf009472c6cd8.jpg);
+}
+
+.item:nth-child(18) {
+  background-image: url(https://i.pinimg.com/236x/64/a2/74/64a27409624f311d1946e250c0a0b1d5.jpg);
+}
+
+.item:nth-child(19) {
+  background-image: url(https://i.pinimg.com/236x/e7/28/6b/e7286be9975171c528383a62e756c7ca.jpg);
+}
+
+.item:nth-child(20) {
+  background-image: url(https://i.pinimg.com/236x/65/61/b7/6561b73a47a8364e6ddcd312634cd539.jpg);
+}
+
+
+/*** Card Numbers ***/
+.item:nth-child(1):before {
+  content: "1";
+}
+
+.item:nth-child(2):before {
+  content: "2";
+}
+
+.item:nth-child(3):before {
+  content: "3";
+}
+
+.item:nth-child(4):before {
+  content: "4";
+}
+
+.item:nth-child(5):before {
+  content: "5";
+}
+
+.item:nth-child(6):before {
+  content: "6";
+}
+
+.item:nth-child(7):before {
+  content: "7";
+}
+
+.item:nth-child(8):before {
+  content: "8";
+}
+
+.item:nth-child(9):before {
+  content: "9";
+}
+
+.item:nth-child(10):before {
+  content: "10";
+}
+
+.item:nth-child(11):before {
+  content: "11";
+}
+
+.item:nth-child(12):before {
+  content: "12";
+}
+
+.item:nth-child(13):before {
+  content: "13";
+}
+
+.item:nth-child(14):before {
+  content: "14";
+}
+
+.item:nth-child(15):before {
+  content: "15";
+}
+
+.item:nth-child(16):before {
+  content: "16";
+}
+
+.item:nth-child(17):before {
+  content: "17";
+}
+
+.item:nth-child(18):before {
+  content: "18";
+}
+
+.item:nth-child(19):before {
+  content: "19";
+}
+
+.item:nth-child(20):before {
+  content: "20";
+}
+
+
+
+/*** Abaixo está os desging dos numeros das paginas ***/
+.pagination {
+  text-align: center;
+}
+.pagination ul {
+  padding: 0 0px;
+  margin: 10px 0 0;
+  background: #fff2;
+  border-radius: 10px;
+}
+.pagination ul li {
+  display: inline;
+  display: inline-flex;
+  margin: 5px;
+  color: #fff;
+}
+
+.pagination li a {
+  padding: 10px;
+  background: #fffd;
+  color: var(--c2);
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.pagination li.page_link a:hover {
+  background: var(--c2);
+  color: #fff;
+}
+
+.pagination li.active_page a {
+  background: var(--c2);
+  color: #fff;
+}
+
+.pagination li > span {
+  font-weight: bold;
+  font-size: 15px;
+  top: -4px;
+  position: relative;
+}
+
+.pagination li a span {
+  min-width: 20px;
+  display: inline-block;
+}
+
+.pagination li.page_link.active_page.active a {
+  cursor: default;
+}
+/* Abaixo esta as setas para passar  de página */
+li.previous_link a, li.next_link a,
+li.first_link a, li.last_link a {
+  background: #fff0;
+  
+  color: #fff0;
+  display: block;
+  padding: 10px 12px;
+}
+
+li.previous_link a:before, li.next_link a:before,
+li.first_link a:before, li.last_link a:before {
+  content: "";
+  border: 2px solid #fff;
+  width: 12px;
+  height: 12px;
+  display: block;
+  position: absolute;
+  border-width: 3px 0 0 3px;
+  transform: rotate(-45deg);
+  margin-top: 3px;
+  margin-left: 3px;
+  border-radius: 2px;
+}
+
+li.next_link a:before,
+li.last_link a:before {
+  transform: rotate(135deg);
+  margin-left: -3px;
+}
+
+li.first_link a:before, li.last_link a:before {
+  filter: drop-shadow(5px 5px 0 #fff);
+  margin-left: 0px;
+}
+
+li.previous_link a:hover, li.next_link a:hover,
+li.first_link a:hover, li.last_link a:hover {
+  background: var(--c2);
+  border-color: var(--c2);
+}
+
+li.no_more.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+li.page_link.first.active_page.active a {
+  cursor: default;
+}
+
+@media screen and (orientation: landscape) and (max-width: 800px) {
+  .pagination ul {
+    margin-top: 20px;
+  }
+
+  .resizer {
+    top: 5px;
+  }
+
+  .gallery:before, .gallery:after {
+    top: 16px;
+  }
+}
+
+@keyframes rotation_481 {
+  0% {
+    transform: rotateZ(0deg);
+  }
+
+  0% {
+    transform: rotateZ(360deg);
+  }
+}
+@keyframes floating {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.wrapper {
+  display: flex;
+  list-style: none;
+  height: fit-content;
+  width: fit-content;
+  font-family: "Poppins", sans-serif;
+  position: absolute;
+  top: 3%;
+  left: 86%;
+ 
+}
+
+.wrapper .icon {
+  position: relative;
+  background: #4d4b4b;
+  border-radius: 50%;
+  margin: 10px;
+  width: 50px;
+  height: 50px;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  top: 0;
+  right: 0;
+  
+}
+
+
+.wrapper .tooltip {
+  position: absolute;
+  top: 0;
+  font-size: 14px;
+  background: #fff;
+  color: #fff;
+  padding: 5px 8px;
+  border-radius: 5px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .tooltip::before {
+  position: absolute;
+  content: "";
+  height: 8px;
+  width: 8px;
+  background: #4d4b4b;
+  bottom: -3px;
+  left: 50%;
+  transform: translate(-50%) rotate(45deg);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .icon:hover .tooltip {
+  top: -45px;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.wrapper .icon:hover span,
+.wrapper .icon:hover .tooltip {
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+}
+
+.wrapper .linkedink:hover,
+.wrapper .linkedin:hover .tooltip,
+.wrapper .linkedin:hover .tooltip::before {
+  background: #1877F2;
+  color: #fff;
+}
+
+.wrapper .gmail:hover,
+.wrapper .gmail:hover .tooltip,
+.wrapper .Gmail:hover .tooltip::before {
+  background: #282828;
+  color: #fff;
+}
+
+.wrapper .instagram:hover,
+.wrapper .instagram:hover .tooltip,
+.wrapper .instagram:hover .tooltip::before {
+  background: #e23757;
+  color: #fff;
+}
+.wrapper .imagem button{
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  position: absolute;
+  background-color: transparent;
+  border: none;
+}
+.wrapper .icon .imagem img{
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  width: 100%;
+  max-height: 100%;
+  aspect-ratio: 3/2;
+  object-fit: contain;
+  mix-blend-mode: color;
+  top: 20%;
+  left: 0;
+  
+  
+}
+.Info p {
+  font-family: "Cuprum", sans-serif;
+  font-style: normal;
+  color: white;
+  width: 70%;
+}
