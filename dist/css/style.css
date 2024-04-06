@@ -6,7 +6,7 @@
 body {
   overflow: hidden;
   width: 100vw;
-  height: 100vh;
+  height: 120vh; 
   margin: 0;
   display: flex;
   align-items: center;
@@ -18,24 +18,152 @@ body {
 }
 body * {
   box-sizing: border-box;
+  
 }
-.conteiner h1{
+.site-conteiner {
+  position: relative;
+  
+}
+.site-conteiner h1{
   font-family: "Cuprum", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
   color:white;
-  position: absolute;
-  top: 0;
-  right: 30%;
+  position: relative;
+  top: -30px; 
   font-size: 55px;
   letter-spacing: 13px;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  display: flex;
 }
+
+/*** Botoes***/
+.wrapper {
+  display: flex;
+  list-style: none;
+  height: fit-content;
+  width: fit-content;
+  font-family: "Poppins", sans-serif;
+  position: relative;
+  top: -85px;
+  right:auto;
+  align-items: top;
+ 
+}
+
+.wrapper .icon {
+  position: relative;
+  background: #4d4b4b;
+  border-radius: 50%;
+  margin: 10px;
+  width: 50px;
+  height: 50px;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  top: 0;
+  right: 0;
+  
+}
+
+
+.wrapper .tooltip {
+  position: absolute;
+  top: 0;
+  font-size: 14px;
+  background: #fff;
+  color: #fff;
+  padding: 5px 8px;
+  border-radius: 5px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .tooltip::before {
+  position: absolute;
+  content: "";
+  height: 8px;
+  width: 8px;
+  background: #4d4b4b;
+  bottom: -3px;
+  left: 50%;
+  transform: translate(-50%) rotate(45deg);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .icon:hover .tooltip {
+  top: -45px;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.wrapper .icon:hover span,
+.wrapper .icon:hover .tooltip {
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+}
+
+.wrapper .linkedink:hover,
+.wrapper .linkedin:hover .tooltip,
+.wrapper .linkedin:hover .tooltip::before {
+  background: #1877F2;
+  color: #fff;
+}
+
+.wrapper .gmail:hover,
+.wrapper .gmail:hover .tooltip,
+.wrapper .Gmail:hover .tooltip::before {
+  background: #282828;
+  color: #fff;
+}
+
+.wrapper .instagram:hover,
+.wrapper .instagram:hover .tooltip,
+.wrapper .instagram:hover .tooltip::before {
+  background: #e23757;
+  color: #fff;
+}
+.wrapper .imagem button{
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  position: absolute;
+  background-color: transparent;
+  border: none;
+}
+.wrapper .icon .imagem img{
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  width: 100%;
+  max-height: 100%;
+  aspect-ratio: 3/2;
+  object-fit: contain;
+  mix-blend-mode: color;
+  top: 20%;
+  left: 0;
+  
+  
+}
+
+/*** Conjunto de Cards ***/
 .gallery {
   display: flex;
   align-items: center;
   flex-direction: column;
   position: relative;
-  padding-top: 60px;
+  padding-top: 50px;
 }
 .gallery:before, .gallery:after {
   content: "";
@@ -45,7 +173,7 @@ body * {
   border: 0 solid #fff;
   border-width: 0 0 3px 3px;
   transform: rotate(45deg);
-  left: 15px;
+  left: 100px;
   top: 11px;
   border-radius: 2px;
   opacity: 0.5;
@@ -53,15 +181,17 @@ body * {
   animation-fill-mode: forwards;
 }
 .gallery:after {
-  left: inherit;
-  right: 15px;
+  left: auto;
+  right: 100px;
   transform: rotate(-135deg);
 }
 
+
+/**** Animação texto acima dos card **** */
 .resizer {
   position: absolute;
   top: 0;
-  width: calc(100% - 45px);
+  width: calc(90% - 45px);
   height: 36px;
   overflow: hidden;
   text-align: center;
@@ -113,9 +243,9 @@ body * {
     opacity: 1;
   }
 }
-
+/*** Especificação dos card ***/
 .item {
-  width: calc(300px - 20px);
+  width: calc(350px - 20px);
   height: calc(456px - 20px);
   height: 50vh;
   padding: 10px;
@@ -175,91 +305,117 @@ body * {
   transition: left 0.5s ease 0s;
 }
 
+/*** Config do sobre mim ***/
+.Info{
+  padding-top: 50px;
+  padding-left: 10px;
+  display: flex;
+  column-gap: 30px;
+ 
+}
+.Info h2{
+  font-family: "Cuprum", sans-serif;
+  font-style: italic;
+  width: 8%;
+}
+.Info .content-info p {
+  font-family: "Cuprum", sans-serif;
+  font-style: italic;
+  color: white;
+  font-size: 20px;
+  margin: 0;
+  text-indent: 3ch;
+  max-width: 70%;
+  line-height: 1.5em;
+}
+
+/*** atribuição de cada imagem do card ***/
 .item:nth-child(1) {
-  background-image: url(/antono/Alien\ capa.png);  
+  background-image: url(/antono/Alien\ capa\ pior.jpg);  
  
 }
 
 .item:nth-child(2) {
-  background-image: url(/antono/catnaipe\ akira.png);
+  background-image: url(/antono/catnaipe\ akira\ pior.jpg);
 }
 
 .item:nth-child(3) {
-  background-image: url(/antono/Tocar\ da\ Pele.png);
+  background-image: url(/antono/Tocar\ da\ PelePior.jpg);
  
 }
 
 .item:nth-child(4) {
-  background-image: url(/antono/NETO\ E\ LUCA\ COVER.png);
+  background-image: url(/antono/NETO\ E\ LUCA\ COVERPior.jpg);
 }
 
 .item:nth-child(5) {
-  background-image: url(/antono/Gatarada.png);
+  background-image: url(/antono/GataradaPior.jpg);
 }
 
 .item:nth-child(6) {
-  background-image: url(/antono/feed\ meio\ eu\ e\ clara.jpg);
+  background-image: url(/antono/feed\ meio\ eu\ e\ clara\ pior.jpg);
 }
 
 .item:nth-child(7) {
-  background-image: url(/antono/Meu\ amor.png);
+  background-image: url(/antono/Meu\ amorPior.jpg);
 }
 
 .item:nth-child(8) {
-  background-image: url(/antono/MIRO\ rpg.png);
+  background-image: url(/antono/MIRO\ rpgRPior.jpg);
 }
 
 .item:nth-child(9) {
-  background-image: url(/antono/Icon\ Pc.jpg);
+  background-image: url(/antono/Icon\ PcPior.jpg);
 }
 
 .item:nth-child(10) {
-  background-image: url(/antono/Pau\ No\ Cesar\ bosquete.jpg);
+  background-image: url(/antono/Pau\ No\ Cesar\ bosquetePior.jpg);
 }
 
 .item:nth-child(11) {
-  background-image: url(/antono/ICONE\ CAIQUE.png);
+  background-image: url(/antono/ICONE\ CAIQUEPior.jpg);
 }
 
 .item:nth-child(12) {
-  background-image: url(/antono/DARA\ rpg.png);
+  background-image: url(/antono/DARA\ rpgrpior.jpg);
 }
 
 .item:nth-child(13) {
-  background-image: url(/antono/Tono\ Vagabond\ fundo\ branco.jpg);
+  background-image: url(/antono/Tono\ Vagabond\ fundo\ brancoPior.jpg);
 }
 
 .item:nth-child(14) {
-  background-image: url(/antono/Vem\ Pra\ Pixta\ REAL\ OFICIAL\ NACIONAL.jpg);
+  background-image: url(/antono/Vem\ Pra\ Pixta\ REAL\ OFICIAL\ NACIONALPior.jpg);
 }
 
 .item:nth-child(15) {
-  background-image: url(https://i.pinimg.com/236x/b1/6a/67/b16a67e37b37b99352dbbf96e841bf7a.jpg);
+  background-image: url(/antono/TEST\ DRIVE\ CD\ COVER\ CANCELADOPior.jpg);
 }
 
 .item:nth-child(16) {
-  background-image: url(https://i.pinimg.com/236x/d7/bf/08/d7bf089a7b117584390dde837b2c9414.jpg);
+  background-image: url(/antono/TEST\ DRIVE\ CANCELADOPior.jpg);
 }
 
 .item:nth-child(17) {
-  background-image: url(https://i.pinimg.com/236x/3e/af/50/3eaf50bf42502bd8b9faf009472c6cd8.jpg);
+  background-image: url(/antono/JESTERPior.jpg);
 }
 
 .item:nth-child(18) {
-  background-image: url(https://i.pinimg.com/236x/64/a2/74/64a27409624f311d1946e250c0a0b1d5.jpg);
+  background-image: url(/antono/GUIN\ PINGUINPior\ .jpg);
 }
 
 .item:nth-child(19) {
-  background-image: url(https://i.pinimg.com/236x/e7/28/6b/e7286be9975171c528383a62e756c7ca.jpg);
+  background-image: url(/antono/FALA\ TUBAROES!Pior.jpg);
 }
 
 .item:nth-child(20) {
-  background-image: url(https://i.pinimg.com/236x/65/61/b7/6561b73a47a8364e6ddcd312634cd539.jpg);
+  background-image: url(/antono/5eeb226390a51e2d11e413453f976c67.jpg);
 }
 
 
+
 /*** Card Numbers ***/
-.item:nth-child(1):before {
+/* .item:nth-child(1):before {
   content: "1";
 }
 
@@ -334,10 +490,12 @@ body * {
 .item:nth-child(19):before {
   content: "19";
 }
-
+*/
 .item:nth-child(20):before {
-  content: "20";
-}
+  content: "Em Breve...";
+  color: yellow ;
+  font-style: var(--c2);
+} 
 
 
 
@@ -479,124 +637,3 @@ li.page_link.first.active_page.active a {
   }
 }
 
-.wrapper {
-  display: flex;
-  list-style: none;
-  height: fit-content;
-  width: fit-content;
-  font-family: "Poppins", sans-serif;
-  position: absolute;
-  top: 3%;
-  left: 86%;
- 
-}
-
-.wrapper .icon {
-  position: relative;
-  background: #4d4b4b;
-  border-radius: 50%;
-  margin: 10px;
-  width: 50px;
-  height: 50px;
-  font-size: 18px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  top: 0;
-  right: 0;
-  
-}
-
-
-.wrapper .tooltip {
-  position: absolute;
-  top: 0;
-  font-size: 14px;
-  background: #fff;
-  color: #fff;
-  padding: 5px 8px;
-  border-radius: 5px;
-  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-  opacity: 0;
-  pointer-events: none;
-  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-
-.wrapper .tooltip::before {
-  position: absolute;
-  content: "";
-  height: 8px;
-  width: 8px;
-  background: #4d4b4b;
-  bottom: -3px;
-  left: 50%;
-  transform: translate(-50%) rotate(45deg);
-  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-
-.wrapper .icon:hover .tooltip {
-  top: -45px;
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-}
-
-.wrapper .icon:hover span,
-.wrapper .icon:hover .tooltip {
-  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
-}
-
-.wrapper .linkedink:hover,
-.wrapper .linkedin:hover .tooltip,
-.wrapper .linkedin:hover .tooltip::before {
-  background: #1877F2;
-  color: #fff;
-}
-
-.wrapper .gmail:hover,
-.wrapper .gmail:hover .tooltip,
-.wrapper .Gmail:hover .tooltip::before {
-  background: #282828;
-  color: #fff;
-}
-
-.wrapper .instagram:hover,
-.wrapper .instagram:hover .tooltip,
-.wrapper .instagram:hover .tooltip::before {
-  background: #e23757;
-  color: #fff;
-}
-.wrapper .imagem button{
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  cursor: pointer;
-  position: absolute;
-  background-color: transparent;
-  border: none;
-}
-.wrapper .icon .imagem img{
-  position: absolute;
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  width: 100%;
-  max-height: 100%;
-  aspect-ratio: 3/2;
-  object-fit: contain;
-  mix-blend-mode: color;
-  top: 20%;
-  left: 0;
-  
-  
-}
-.Info p {
-  font-family: "Cuprum", sans-serif;
-  font-style: normal;
-  color: white;
-  width: 70%;
-}
