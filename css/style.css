@@ -332,7 +332,7 @@ body * {
 
 /*** atribuição de cada imagem do card ***/
 .item:nth-child(1) {
-  background-image: url(/antono/Alien\ capa\ pior.jpg);  
+  background-image: url(/antono/matando_dragoesPior.jpg);  
  
 }
 
@@ -362,7 +362,7 @@ body * {
 }
 
 .item:nth-child(8) {
-  background-image: url(/antono/MIRO\ rpgRPior.jpg);
+  background-image: url(/antono/Alien\ capa\ pior.jpg);
 }
 
 .item:nth-child(9) {
@@ -410,6 +410,9 @@ body * {
 }
 
 .item:nth-child(20) {
+  background-image: url(/antono/MIRO\ rpgRPior.jpg);
+}
+.item:nth-child(21) {
   background-image: url(/antono/5eeb226390a51e2d11e413453f976c67.jpg);
 }
 
@@ -492,7 +495,7 @@ body * {
   content: "19";
 }
 */
-.item:nth-child(20):before {
+.item:nth-child(21):before {
   content: "Em Breve...";
   color: yellow ;
   font-style: var(--c2);
