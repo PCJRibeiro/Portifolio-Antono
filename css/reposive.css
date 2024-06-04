@@ -1,3 +1,128 @@
-@media screen {
+@media (max-width: 900px){
+    .Info .content-info p{
+        font-size: 15px;
+    }
+    .resizer {
+      position: absolute;
+      top: 0;
+      width: calc(80% - 45px);
+      height: 36px;
+      overflow: hidden;
+      text-align: center;
+      color: #ffffff;
+      line-height: 38px;
+      font-weight: 200;
+      letter-spacing: 1px;
+      animation: letter-s 2s ease 0s 3 alternate, hide-s 2s ease 6s 1;
+      animation-fill-mode: backwards, forwards;
+      opacity: 0.5;
+    }
+      .resizer:before, .resizer:after {
+        content: "";
+        position: absolute;
+        width: calc(50% - 70px);
+        border-bottom: 4px dotted #ffffff;
+        margin-left: 20px;
+        top: 18px;
+        left: 0;
+        animation: lines-s 2s ease 0s 3 alternate;
+      }
+      .resizer:after {
+        
+        left: inherit;
+        margin-right: 7px;
+      }
+      .item {
+        width: calc(200px - 20px);
+        
+        height: 30vh;
+        
+        
+      }
+      .site-conteiner h1{
+        font-size: 30px;
+        letter-spacing: 13px;
+        top: 18px;
+      }
+
+}
+@media (max-width: 480px){
+  .Info .content-info p{
+    font-size: 12px;
+}
+.resizer {
+  position: absolute;
+  top: 0;
+  width: calc(40% );
+  height: 36px;
+  overflow: hidden;
+  text-align: center;
+  color: #ffffff;
+  line-height: 38px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  animation: letter-s 2s ease 0s 3 alternate, hide-s 2s ease 6s 1;
+  animation-fill-mode: backwards, forwards;
+  opacity: 0.5;
+}
+  .resizer:before, .resizer:after {
+    content: "";
+    position: absolute;
+    width: calc(50% - 70px);
+    border-bottom: 4px dotted #ffffff;
+    margin-left: 20px;
+    top: 18px;
+    left: 0;
+    animation: lines-s 2s ease 0s 3 alternate;
+  }
+  .resizer:after {
     
+    left: inherit;
+    margin-right: 7px;
+  }
+  .item {
+    width: calc(200px - 20px);
+    
+    height: 30vh;
+    
+    
+  }
+  .site-conteiner h1{
+    font-size: 30px;
+    letter-spacing: 13px;
+    top: 48px;
+  }
+  
+
+}
+@media (max-width: 1440px) {
+  .body{
+    height: 150vh;
+  }
+  .resizer {
+    position: absolute;
+    top: 0;
+    width: calc(80% - 45px);
+    height: 36px;
+    overflow: hidden;
+    text-align: center;
+    color: #ffffff;
+    line-height: 38px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    animation: letter-s 2s ease 0s 3 alternate, hide-s 2s ease 6s 1;
+    animation-fill-mode: backwards, forwards;
+    opacity: 0.5;
+  }
+  .site-conteiner h1{
+    font-size: 30px;
+    letter-spacing: 13px;
+    top: 48px;
+  }
+  .Info .content-info p{
+    font-size: 18px;
+}
+.wrapper{
+  top: 0px;
+}
 }

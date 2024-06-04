@@ -5,12 +5,12 @@ let winw = window.innerWidth;
 
 function optionsByWindowSize() {
 	winw = window.innerWidth;
-	if (winw > 1600) { itms = 5; stpg = 0; pltd = 4; }
-	else if (winw > 1230) { itms = 5; stpg = 2; pltd = 4; }
-	else if (winw > 980) { itms = 4; stpg = 3; pltd = 4; }
-	else if (winw > 750) { itms = 3; stpg = 4; pltd = 4; }
-	else if (winw > 510) { itms = 2; stpg = 5; pltd = 4; }
-	else { itms = 1; stpg = 6; pltd = 1; }
+	if (winw > 1650) { itms = 5; stpg = 0; pltd = 4; }
+	else if (winw > 1230) { itms = 3; stpg = 0; pltd = 4; }
+	else if (winw > 980) { itms = 2; stpg = 0; pltd = 4; }
+	else if (winw > 750) { itms = 2; stpg = 0; pltd = 4; }
+	else if (winw > 510) { itms = 2; stpg = 0; pltd = 4; }
+	else { itms = 2; stpg = 0; pltd = 1; }
 }
 
 function reportWindowSize() {
