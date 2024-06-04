@@ -30,9 +30,7 @@
 }
 }
 @media (max-width: 900px){
-  .body{
-    height: 120vh;
-  }
+  
     .Info .content-info p{
         font-size: 15px;
     }
@@ -116,6 +114,28 @@
   }
   .item {
     width: calc(200px - 20px);
+    
+    height: 30vh;
+    
+    
+  }
+  .site-conteiner h1{
+    font-size: 30px;
+    letter-spacing: 13px;
+    top: 48px;
+  }
+  .wrapper{
+    top: -85px;
+  }
+
+}
+@media( max-width: 404px){
+  .Info .content-info p{
+    font-size: 12px;
+}
+
+  .item {
+    width: calc(180px - 20px);
     
     height: 30vh;
     
