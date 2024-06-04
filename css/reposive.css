@@ -1,4 +1,38 @@
+@media (max-width: 1440px) {
+  .body{
+    height: 150vh;
+  }
+  .resizer {
+    position: absolute;
+    top: 0;
+    width: calc(80% - 45px);
+    height: 36px;
+    overflow: hidden;
+    text-align: center;
+    color: #ffffff;
+    line-height: 38px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    animation: letter-s 2s ease 0s 3 alternate, hide-s 2s ease 6s 1;
+    animation-fill-mode: backwards, forwards;
+    opacity: 0.5;
+  }
+  .site-conteiner h1{
+    font-size: 30px;
+    letter-spacing: 13px;
+    top: 48px;
+  }
+  .Info .content-info p{
+    font-size: 18px;
+}
+.wrapper{
+  top: 0px;
+}
+}
 @media (max-width: 900px){
+  .body{
+    height: 120vh;
+  }
     .Info .content-info p{
         font-size: 15px;
     }
@@ -42,9 +76,9 @@
       .site-conteiner h1{
         font-size: 30px;
         letter-spacing: 13px;
-        top: 18px;
+        top:  4px;
       }
-
+      
 }
 @media (max-width: 480px){
   .Info .content-info p{
@@ -92,37 +126,8 @@
     letter-spacing: 13px;
     top: 48px;
   }
-  
+  .wrapper{
+    top: -85px;
+  }
 
-}
-@media (max-width: 1440px) {
-  .body{
-    height: 150vh;
-  }
-  .resizer {
-    position: absolute;
-    top: 0;
-    width: calc(80% - 45px);
-    height: 36px;
-    overflow: hidden;
-    text-align: center;
-    color: #ffffff;
-    line-height: 38px;
-    font-weight: 500;
-    letter-spacing: 1px;
-    animation: letter-s 2s ease 0s 3 alternate, hide-s 2s ease 6s 1;
-    animation-fill-mode: backwards, forwards;
-    opacity: 0.5;
-  }
-  .site-conteiner h1{
-    font-size: 30px;
-    letter-spacing: 13px;
-    top: 48px;
-  }
-  .Info .content-info p{
-    font-size: 18px;
-}
-.wrapper{
-  top: 0px;
-}
 }
